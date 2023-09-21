@@ -1,5 +1,7 @@
 package org.example.desafio1;
 
+import org.example.utils.Util;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -10,7 +12,7 @@ public class Exercicio1 {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Digite o número de valores a ser digitado: ");
             int number = scanner.nextInt();
-            checksNegativeNumbers(number);
+            Util.checksNegativeNumbers(number);
             ArrayList<Integer> numbers = readNumbers(number);
             ArrayList<Integer> organizedList = organizeList(numbers);
             organizedList.forEach(System.out::println);
@@ -25,7 +27,7 @@ public class Exercicio1 {
         for (int i = 0; i < lenght; i++) {
             System.out.println("Valor "+(i+1)+" :");
             int value = scanner.nextInt();
-            checksNegativeNumbers(value);
+            Util.checksNegativeNumbers(value);
             integers.add(value);
         }
         return integers;
@@ -44,7 +46,5 @@ public class Exercicio1 {
         return result;
     }
 
-    public static void checksNegativeNumbers(int value){
-        if (value<0) throw new IllegalArgumentException("O valor não pode ser nagativo");
-    }
+
 }

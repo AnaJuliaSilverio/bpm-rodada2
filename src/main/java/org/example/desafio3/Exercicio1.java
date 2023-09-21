@@ -1,5 +1,7 @@
 package org.example.desafio3;
 
+import org.example.utils.Util;
+
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -8,6 +10,7 @@ public class Exercicio1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite uma posicao: ");
         int value = scanner.nextInt();
+        Util.checksNegativeNumbers(value);
         int calculatesFibonnaci = calculatesFibonnaci(value);
 
         System.out.println("N = "+value+ "=> saida Fib = "+calculatesFibonnaci);
