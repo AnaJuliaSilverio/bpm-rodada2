@@ -7,13 +7,18 @@ import java.util.stream.IntStream;
 
 public class Exercicio1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite uma posicao: ");
-        int value = scanner.nextInt();
-        Util.checksNegativeNumbers(value);
-        int calculatesFibonnaci = calculatesFibonnaci(value);
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Digite uma posicao: ");
+            int value = scanner.nextInt();
+            Util.checksNegativeNumbers(value);
+            int calculatesFibonnaci = calculatesFibonnaci(value);
 
-        System.out.println("N = "+value+ "=> saida Fib = "+calculatesFibonnaci);
+            System.out.println("N = "+value+ "=> saida Fib = "+calculatesFibonnaci);
+        }catch (IllegalArgumentException exception){
+            System.out.println(exception.getMessage());
+        }
+
 
     }
     public static int calculatesFibonnaci(int n){
